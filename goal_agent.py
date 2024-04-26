@@ -1,6 +1,14 @@
 import argparse
 import city
 import map
+import actions
+
+'''
+
+    goal_agent - a goal based agent for maps
+    Name: Curtis Kauer
+    
+'''
 
 argument_parser = argparse.ArgumentParser()
 
@@ -18,6 +26,8 @@ def main():
     goal_city = arguments.end_city
     
     map_data = open(file, "r")
+    
+    graph = map.Map()
     
     while True:
         line = map_data.readline()
@@ -48,8 +58,6 @@ def main():
         new_city.set_longitude(longitude)
         
         neighbors = neighbors.split('va-')
-        neighbor_dictionary = {}
-        graph = map.Map()
         
         for neighbor in neighbors:
             if neighbor == '':
@@ -57,11 +65,13 @@ def main():
             
             neighbor = neighbor.strip()
             neighbor = neighbor.split(' ')
-            neighbor_dictionary[neighbor[0]] = neighbor[1]
-    
-        graph.add_to_map(new_city, neighbor_dictionary)
-    
-    # TODO: create map and add city objects
+            graph.add_edge(new_city.city_name, neighbor[0], neighbor[1])
+
+    actions_to_take = actions.Actions(graph)
+        
+    if searching_method == 'bfs':
+        actions_to_take.bfs(starting_city, goal_city)
+        actions_to_take.output_visited()
     
 if __name__ == "__main__":
     main()
