@@ -72,6 +72,11 @@ def main():
     if searching_method == 'bfs':
         actions_to_take.bfs(starting_city, goal_city)
         actions_to_take.output_visited()
+        actions_to_take.output_frontier()
+    elif searching_method == 'dls':
+        actions_to_take.ids(starting_city, goal_city)
+        actions_to_take.output_visited()
+        actions_to_take.output_frontier()
     
 if __name__ == "__main__":
     main()
