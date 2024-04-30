@@ -10,6 +10,7 @@ import actions
     
 '''
 
+# ArgumentParser object to handle parsing command line
 argument_parser = argparse.ArgumentParser()
 
 argument_parser.add_argument("--map_file", "-f", type=str, required=True, help='file with map data')
@@ -29,6 +30,8 @@ def main():
     
     graph = map.Map()
     
+    # reading data and adding to the map
+    # caluclates the longitude and longitude
     while True:
         line = map_data.readline()
         if not line:
@@ -66,7 +69,8 @@ def main():
             neighbor = neighbor.strip()
             neighbor = neighbor.split(' ')
             graph.add_edge(new_city.city_name, neighbor[0], neighbor[1])
-
+    
+    # intialize actions to take
     actions_to_take = actions.Actions(graph)
         
     if searching_method == 'bfs':
@@ -77,6 +81,11 @@ def main():
         actions_to_take.ids(starting_city, goal_city)
         actions_to_take.output_visited()
         actions_to_take.output_frontier()
+    elif searching_method == 'ucs':
+        actions_to_take.ucs(starting_city, goal_city)
+        actions_to_take.output_visited()
+        # actions_to_take.output_frontier()
+        actions_to_take.output_cost()
     
 if __name__ == "__main__":
     main()
