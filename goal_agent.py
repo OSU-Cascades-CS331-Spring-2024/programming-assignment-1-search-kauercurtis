@@ -60,6 +60,8 @@ def main():
         longitude = int(longitude_degree) + (int(longitude_minutes) / 60) + (int(longitude_seconds) / 3600)
         new_city.set_longitude(longitude)
         
+        graph.add_city(new_city)
+        
         neighbors = neighbors.split('va-')
         
         for neighbor in neighbors:
@@ -72,20 +74,52 @@ def main():
     
     # intialize actions to take
     actions_to_take = actions.Actions(graph)
+    
+    if starting_city == None or goal_city == None:
+        solution_file = open("solutions.txt", "w")
+        starting_cities = ["brest", "montpellier", "strasbourg", "paris", "grenoble", "brest", "grenoble", "nice", "caen"]
+        goal_city = ["nice", "calais", "bordeaux", "grenoble", "paris", "grenoble", "brest", "nantes", "strasbourg"]
         
-    if searching_method == 'bfs':
-        actions_to_take.bfs(starting_city, goal_city)
-        actions_to_take.output_visited()
-        actions_to_take.output_frontier()
+        for index in range(len(starting_cities)):
+            city_A = starting_cities[index]
+            city_B = goal_city[index]
+            solution_file.write(city_A + " --> " + city_B + "\n")
+            actions_to_take.bfs(city_A, city_B)
+            solution_file.write("bfs - explored: " + str(actions_to_take.get_explored()) + " expanded: " + str(actions_to_take.get_expanded()) + " maintained: " + str(actions_to_take.get_maintained()) + "\n")
+            solution_file.write("path: " + str(actions_to_take.visited) + " cost: " + str(actions_to_take.get_cost()) + "\n")
+            
+            actions_to_take.ids(starting_cities[index], goal_city[index])
+            solution_file.write("dls - explored: " + str(actions_to_take.get_explored()) + " expanded: " + str(actions_to_take.get_expanded()) + " maintained: " + str(actions_to_take.get_maintained()) + "\n")
+            solution_file.write("path: " + str(actions_to_take.visited) + " cost: " + str(actions_to_take.get_cost()) + "\n")
+            
+            actions_to_take.ucs(starting_cities[index], goal_city[index])
+            solution_file.write("ucs - explored: " + str(actions_to_take.get_explored()) + " expanded: " + str(actions_to_take.get_expanded()) + " maintained: " + str(actions_to_take.get_maintained()) + "\n")
+            solution_file.write("path: " + str(actions_to_take.visited) + " cost: " + str(actions_to_take.get_cost()) + "\n")
+            
+            actions_to_take.astar(starting_cities[index], goal_city[index])
+            solution_file.write("astar - explored: " + str(actions_to_take.get_explored()) + " expanded: " + str(actions_to_take.get_expanded()) + " maintained: " + str(actions_to_take.get_maintained()) + "\n")
+            solution_file.write("path: " + str(actions_to_take.visited) + " cost: " + str(actions_to_take.get_cost()) + "\n")
+            
+            solution_file.write("\n")
+            
+    elif searching_method == 'astar':
+        actions_to_take.astar(starting_city, goal_city)
+        print("astar - explored: ", actions_to_take.get_explored(), " expanded: ", actions_to_take.get_expanded(), " maintained: ", actions_to_take.get_maintained())
+        print("path: ", actions_to_take.visited, " cost: ", actions_to_take.get_cost())
+        # actions_to_take.output_frontier()
     elif searching_method == 'dls':
         actions_to_take.ids(starting_city, goal_city)
-        actions_to_take.output_visited()
-        actions_to_take.output_frontier()
+        print("dls - explored: ", actions_to_take.get_explored(), " expanded: ", actions_to_take.get_expanded(), " maintained: ", actions_to_take.get_maintained())
+        print("path: ", actions_to_take.visited, " cost: ", actions_to_take.get_cost())
+        # actions_to_take.output_frontier()
     elif searching_method == 'ucs':
         actions_to_take.ucs(starting_city, goal_city)
-        actions_to_take.output_visited()
-        # actions_to_take.output_frontier()
-        actions_to_take.output_cost()
-    
+        print("ucs - explored: ", actions_to_take.get_explored(), " expanded: ", actions_to_take.get_expanded(), " maintained: ", actions_to_take.get_maintained())
+        print("path: ", actions_to_take.visited, " cost: ", actions_to_take.get_cost())
+    else:
+        actions_to_take.bfs(starting_city, goal_city)   
+        print("bfs - explored: ", actions_to_take.get_explored(), " expanded: ", actions_to_take.get_expanded(), " maintained: ", actions_to_take.get_maintained())
+        print("path: ", actions_to_take.visited, " cost: ", actions_to_take.get_cost())
+        
 if __name__ == "__main__":
     main()

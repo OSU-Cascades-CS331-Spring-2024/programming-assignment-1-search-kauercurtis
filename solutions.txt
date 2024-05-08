@@ -1,0 +1,90 @@
+brest --> nice
+bfs - explored: 16 expanded: 28 maintained: 13
+path: ['brest', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris', 'caen', 'calais', 'nancy', 'dijon', 'lyon', 'avignon', 'montpellier', 'marseille', 'nice'] cost: 3751
+dls - explored: 16 expanded: 28 maintained: 13
+path: ['brest', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris', 'caen', 'calais', 'nancy', 'dijon', 'lyon', 'avignon', 'montpellier', 'marseille', 'nice'] cost: 3751
+ucs - explored: 2225 expanded: 8516 maintained: 6292
+path: ['brest', 'rennes', 'paris', 'dijon', 'lyon', 'avignon', 'marseille', 'nice'] cost: 1633
+astar - explored: 23 expanded: 23 maintained: 1
+path: ['brest', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'montpellier', 'avignon', 'marseille', 'nice'] cost: 1589
+
+montpellier --> calais
+bfs - explored: 10 expanded: 18 maintained: 9
+path: ['montpellier', 'toulouse', 'limoges', 'paris', 'caen', 'rennes', 'nantes', 'bordeaux', 'brest', 'calais'] cost: 2419
+dls - explored: 10 expanded: 18 maintained: 9
+path: ['montpellier', 'toulouse', 'limoges', 'paris', 'caen', 'rennes', 'nantes', 'bordeaux', 'brest', 'calais'] cost: 2419
+ucs - explored: 97 expanded: 320 maintained: 224
+path: ['montpellier', 'toulouse', 'limoges', 'paris', 'calais'] cost: 1224
+astar - explored: 17 expanded: 18 maintained: 2
+path: ['montpellier', 'avignon', 'lyon', 'dijon', 'paris', 'calais'] cost: 1131
+
+strasbourg --> bordeaux
+bfs - explored: 7 expanded: 14 maintained: 8
+path: ['strasbourg', 'nancy', 'calais', 'caen', 'rennes', 'nantes', 'bordeaux'] cost: 1636
+dls - explored: 7 expanded: 14 maintained: 8
+path: ['strasbourg', 'nancy', 'calais', 'caen', 'rennes', 'nantes', 'bordeaux'] cost: 1636
+ucs - explored: 59 expanded: 218 maintained: 160
+path: ['strasbourg', 'dijon', 'lyon', 'limoges', 'bordeaux'] cost: 1160
+astar - explored: 17 expanded: 21 maintained: 5
+path: ['strasbourg', 'nancy', 'paris', 'limoges', 'bordeaux'] cost: 1123
+
+paris --> grenoble
+bfs - explored: 17 expanded: 28 maintained: 11
+path: ['paris', 'caen', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'lyon', 'dijon', 'nancy', 'calais', 'strasbourg', 'avignon', 'montpellier', 'marseille', 'nice', 'grenoble'] cost: 3739
+dls - explored: 17 expanded: 28 maintained: 11
+path: ['paris', 'caen', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'lyon', 'dijon', 'nancy', 'calais', 'strasbourg', 'avignon', 'montpellier', 'marseille', 'nice', 'grenoble'] cost: 3739
+ucs - explored: 61 expanded: 237 maintained: 177
+path: ['paris', 'dijon', 'lyon', 'grenoble'] cost: 625
+astar - explored: 10 expanded: 15 maintained: 6
+path: ['paris', 'dijon', 'lyon', 'grenoble'] cost: 625
+
+grenoble --> paris
+bfs - explored: 12 expanded: 25 maintained: 14
+path: ['grenoble', 'lyon', 'dijon', 'nancy', 'calais', 'caen', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris'] cost: 2926
+dls - explored: 12 expanded: 25 maintained: 14
+path: ['grenoble', 'lyon', 'dijon', 'nancy', 'calais', 'caen', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris'] cost: 2926
+ucs - explored: 32 expanded: 101 maintained: 70
+path: ['grenoble', 'lyon', 'limoges', 'paris'] cost: 918
+astar - explored: 12 expanded: 15 maintained: 4
+path: ['grenoble', 'lyon', 'dijon', 'paris'] cost: 621
+
+brest --> grenoble
+bfs - explored: 17 expanded: 28 maintained: 12
+path: ['brest', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris', 'caen', 'calais', 'nancy', 'dijon', 'lyon', 'avignon', 'montpellier', 'marseille', 'nice', 'grenoble'] cost: 3971
+dls - explored: 17 expanded: 28 maintained: 12
+path: ['brest', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris', 'caen', 'calais', 'nancy', 'dijon', 'lyon', 'avignon', 'montpellier', 'marseille', 'nice', 'grenoble'] cost: 3971
+ucs - explored: 151 expanded: 575 maintained: 425
+path: ['brest', 'rennes', 'paris', 'dijon', 'lyon', 'grenoble'] cost: 1214
+astar - explored: 17 expanded: 18 maintained: 2
+path: ['brest', 'rennes', 'nantes', 'limoges', 'lyon', 'grenoble'] cost: 1197
+
+grenoble --> brest
+bfs - explored: 17 expanded: 28 maintained: 10
+path: ['grenoble', 'lyon', 'dijon', 'nancy', 'calais', 'caen', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris', 'montpellier', 'avignon', 'marseille', 'nice', 'brest'] cost: 3808
+dls - explored: 17 expanded: 28 maintained: 10
+path: ['grenoble', 'lyon', 'dijon', 'nancy', 'calais', 'caen', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris', 'montpellier', 'avignon', 'marseille', 'nice', 'brest'] cost: 3808
+ucs - explored: 341 expanded: 1185 maintained: 845
+path: ['grenoble', 'lyon', 'limoges', 'nantes', 'rennes', 'brest'] cost: 1198
+astar - explored: 19 expanded: 18 maintained: 0
+path: ['grenoble', 'lyon', 'limoges', 'nantes', 'rennes', 'brest'] cost: 1198
+
+nice --> nantes
+bfs - explored: 10 expanded: 21 maintained: 12
+path: ['nice', 'marseille', 'avignon', 'lyon', 'dijon', 'nancy', 'calais', 'caen', 'rennes', 'nantes'] cost: 2064
+dls - explored: 10 expanded: 21 maintained: 12
+path: ['nice', 'marseille', 'avignon', 'lyon', 'dijon', 'nancy', 'calais', 'caen', 'rennes', 'nantes'] cost: 2064
+ucs - explored: 56 expanded: 157 maintained: 102
+path: ['nice', 'marseille', 'avignon', 'lyon', 'limoges', 'nantes'] cost: 1262
+astar - explored: 12 expanded: 16 maintained: 5
+path: ['nice', 'marseille', 'avignon', 'montpellier', 'toulouse', 'bordeaux', 'nantes'] cost: 1232
+
+caen --> strasbourg
+bfs - explored: 11 expanded: 22 maintained: 12
+path: ['caen', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris', 'dijon', 'nancy', 'calais', 'strasbourg'] cost: 2743
+dls - explored: 11 expanded: 22 maintained: 12
+path: ['caen', 'rennes', 'nantes', 'bordeaux', 'toulouse', 'limoges', 'paris', 'dijon', 'nancy', 'calais', 'strasbourg'] cost: 2743
+ucs - explored: 18 expanded: 65 maintained: 48
+path: ['caen', 'calais', 'nancy', 'strasbourg'] cost: 989
+astar - explored: 11 expanded: 15 maintained: 5
+path: ['caen', 'paris', 'nancy', 'strasbourg'] cost: 759
+

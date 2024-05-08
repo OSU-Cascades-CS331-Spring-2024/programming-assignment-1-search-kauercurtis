@@ -21,4 +21,12 @@ class City:
    
     def set_longitude(self, longitude):
         self.longitude = longitude
-
+    
+    def get_latitude(self):
+        return [self.latitude_direction, self.latitude]
+    
+    def get_longitude(self):
+        return [self.longitude_direction, self.longitude]
+    
+    def get_coordinates(self):
+        return [self.get_latitude(), self.get_longitude()]
